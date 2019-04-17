@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Writing my first Sinatra web app - SeattleRestaurantRemeberall"
-date:       2019-04-17 20:48:25 +0000
+date:       2019-04-17 16:48:26 -0400
 permalink:  writing_my_first_sinatra_web_app_-_seattlerestaurantremeberall
 ---
 
@@ -25,34 +25,44 @@ As I started working through actually coding out the funtionality that I wanted 
 
 With these complex relationships in mind, I knew I needed to create tables in my database to store cuisines and neighborhood, each with their own id's. Then I would need to re-work my Restaurant table to hold foriegn keys for its associated attributed like this: 
 
-```def create_table do |t|
+```
+def create_table do |t|
      t.string :name
 		 t.integer :cuisine_id
 		 t.integer :neighborhood_id
 		 t.integer :user_id
-end ```
+end
+```
 
 These new tables allowed me to write my associations:
 
-```class User < ActiveRecord::Base 
+```
+class User < ActiveRecord::Base 
        has_many :restaurants
        has_many :cuisines, through: :restaurants
        has_many :neighborhoods, through: :restaurants 
-	end```
+end
+```
 	
-	```class Restaurant < ActiveRecord::Base
+```
+class Restaurant < ActiveRecord::Base
        belongs_to :user
        belongs_to :cuisine
        belongs_to :neighborhood
-end```
+end
+```
 
-```class Cuisine < ActiveRecord::Base
+```
+class Cuisine < ActiveRecord::Base
      has_many :restaurants
-end```
+end
+```
 
-```class Neighborhood < ActiveRecord::Base
+```
+class Neighborhood < ActiveRecord::Base
      has_many :restaurants
-end```
+end
+```
 
 And viola! All of my tables and models have the associations needed to code out the functionality I envision my app to have, like being about to search for Restaurant.find_by(cuisine_id = ?) or pull up User.neighborhoods. 
 
