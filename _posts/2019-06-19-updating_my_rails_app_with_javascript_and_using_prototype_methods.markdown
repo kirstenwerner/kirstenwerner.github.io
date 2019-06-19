@@ -15,11 +15,11 @@ In my project app, I am able to create and store workouts, made up of individual
 
 First, I defined an empty array in order to store all instances of skills that I make on the front end like so: 
 
-``` let allSkills = [ ]```
+ let allSkills = [ ]
 
 Next, I defined my class as Skill, and within that function call a constructor function with the attribute of the object I am working within, and within ~that~ function assigned the object properties to equal my new instance of the class' properties! Finally, I pushed the new instance of the class to my allSkills array, where I can access and reference any of the information stored there anywhere else I would like to, right on the front end. The resulting constructor function will look something like this: 
 
-```class Skill {
+class Skill {
     constructor(obj) {
       this.id = obj.id
       this.name = obj.name
@@ -28,15 +28,15 @@ Next, I defined my class as Skill, and within that function call a constructor f
       this.demo = obj.demo
       allSkills.push(this)
     }
-  }```
+  }
 	
 	Great, now I can create and store instances of my Skill class on the front end! Now what about when I want to act on those instances? This is where prototype methods functions come in....but what in the world is a prototype function?!  Simply put, every function in JavaScript has a prototype property that references an object. When I have an action that I I want to be able to take on any instance of my class object, I can write my function as a prototype, which allows it to become an internal function to the class, and called by linking via dot notation. 
 	
 	I decided to use a prototype to format the html output for my skills show's, roughly like so:
 	
-```Skill.prototype.formatSkill = function(skill) {
+Skill.prototype.formatSkill = function(skill) {
    *html format code*
-  }```
+  }
 	
 	Then I am able to call that formatting prototype funtion later simply by:
 	
