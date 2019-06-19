@@ -34,13 +34,13 @@ Next, I defined my class as Skill, and within that function call a constructor f
 	
 	I decided to use a prototype to format the html output for my skills show's, roughly like so:
 	
-	```Skill.prototype.formatSkill = function(skill) {
+```Skill.prototype.formatSkill = function(skill) {
    *html format code*
   }```
 	
 	Then I am able to call that formatting prototype funtion later simply by:
 	
-	```skillShow.innerHTML = skill.formatSkill(skill)```
+	skillShow.innerHTML = skill.formatSkill(skill)
 	
 	Prototype is just a property that every function in JavaScript has and it allows us to share methods across all instances of a function!
 	
