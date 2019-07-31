@@ -33,7 +33,7 @@ and then incapsulate the code that I want to describe my buttons with the approp
  <NavLink to='/' exact><Button size='medium' color='olive'>Home</Button></NavLink>
  <NavLink to='/recycle-center-finder' exact><Button size='big' color='green'>Recycle It!</Button></NavLink>
  <NavLink to='/materials' exact><Button size='medium' color='teal'>Materials</Button></NavLink>
-					``` 
+ ```
 					
  *note, my semantic-ui 'Button's are also encapsulated in NavLink tags in order to use the react-routed-dom to allow my app to use restful routing.
 
